@@ -1,3 +1,61 @@
+//plugins {
+//    id 'java'
+//    id 'application'
+//    id 'org.javamodularity.moduleplugin' version '1.8.12'
+//    id 'org.openjfx.javafxplugin' version '0.0.13'
+//    id 'org.beryx.jlink' version '2.25.0'
+//}
+//
+//group 'develop'
+//version '1.0-SNAPSHOT'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//ext {
+//    junitVersion = '5.10.2'
+//}
+//
+//sourceCompatibility = '21'
+//targetCompatibility = '21'
+//
+//tasks.withType(JavaCompile) {
+//    options.encoding = 'UTF-8'
+//}
+//
+//application {
+//    mainModule = 'develop.telegram'
+//    mainClass = 'develop.telegram.HelloApplication'
+//}
+//
+//javafx {
+//    version = '21'
+//    modules = ['javafx.controls', 'javafx.fxml']
+//}
+//
+//dependencies {
+//
+//    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+//    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
+//
+//jlink {
+//    imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
+//    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+//    launcher {
+//        name = 'app'
+//    }
+//}
+//
+//jlinkZip {
+//    group = 'distribution'
+//}
+
 plugins {
     id 'java'
     id 'application'
@@ -17,8 +75,8 @@ ext {
     junitVersion = '5.10.2'
 }
 
-sourceCompatibility = '23'
-targetCompatibility = '23'
+sourceCompatibility = '21'
+targetCompatibility = '21'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -26,7 +84,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'develop.telegram'
-    mainClass = 'develop.telegram.HelloApplication'
+    mainClass = 'develop.telegram.TelegramClientApp'
 }
 
 javafx {
@@ -35,7 +93,6 @@ javafx {
 }
 
 dependencies {
-
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

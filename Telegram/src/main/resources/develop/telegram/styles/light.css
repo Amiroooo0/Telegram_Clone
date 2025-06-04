@@ -1,0 +1,26 @@
+.root {
+    -fx-background-color: #ffffff;
+}
+
+.title-label, .input-label, .error-label {
+    -fx-text-fill: #000000;
+}
+
+.login-field {
+    -fx-border-color: #cccccc;
+    -fx-text-fill: #000000;
+}
+
+.primary-button {
+    -fx-background-color: #0088cc;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: #0077b3;
+}
+
+.secondary-button {
+    -fx-background-color: #eeeeee;
+    -fx-text-fill: #333333;
+}

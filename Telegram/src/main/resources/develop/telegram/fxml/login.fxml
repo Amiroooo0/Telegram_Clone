@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" alignment="CENTER" spacing="20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="develop.telegram.controller.AuthController"
+      styleClass="root">
+
+    <Label text="Telegram" styleClass="title-label"/>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Email" styleClass="input-label"/>
+        <TextField fx:id="emailField" promptText="example@mail.com" styleClass="login-field"/>
+
+        <Label text="Username" styleClass="input-label"/>
+        <TextField fx:id="usernameField" promptText="your_id" styleClass="login-field"/>
+
+        <Label text="Password" styleClass="input-label"/>
+        <PasswordField fx:id="passwordField" styleClass="login-field"/>
+    </VBox>
+
+    <Button text="Send Verification Code" onAction="#sendVerificationCode" styleClass="primary-button"/>
+    <TextField fx:id="verificationField" promptText="Enter code here..." visible="false" styleClass="login-field"/>
+    <Label fx:id="errorLabel" visible="false" styleClass="error-label"/>
+    <Button text="Change Theme" onAction="#toggleTheme" styleClass="secondary-button"/>
+</VBox>
