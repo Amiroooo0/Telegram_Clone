@@ -28,26 +28,26 @@ public class UserDatabase {
         }
     }
 
-    public static User login(String username, String password) throws SQLException {
-        String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+    public User findByUsername(String username) {
+        String sql = "SELECT * FROM users WHERE username = ?";
         try (Connection conn = DataBase.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, username);
-            stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
+
             if (rs.next()) {
                 return new User(
-
+                        rs.getInt("id"),
                         rs.getString("username"),
-                        rs.getString("password"),
-                        rs.getString("name"),
-                        rs.getString("phone"),
                         rs.getString("email"),
-                        rs.getString("bio")
+                        rs.getString("phone"),
+                        rs.getString("bio"),
+                        rs.getString("password")
                 );
-            } else {
-                return null;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return null;
     }
 }

@@ -19,6 +19,7 @@ public class SignUp {
 
             System.out.print("Enter password: ");
             String password = scanner.nextLine();
+            String hashedPassword = Password.hashPassword(password);
             System.out.print("Enter name: ");
             String name = scanner.nextLine();
 
@@ -32,7 +33,7 @@ public class SignUp {
             System.out.print("Enter bio: ");
             String bio = scanner.nextLine();
 
-            User newUser = new User(username, password,name, phone, email, bio);
+            User newUser = new User(username, hashedPassword,name, phone, email, bio);
             UserDatabase.registerUser(newUser);
 
             System.out.println("Registred");
