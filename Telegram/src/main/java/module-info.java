@@ -1,6 +1,7 @@
 module develop.telegram {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens develop.telegram to javafx.fxml;
