@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.Scanner;
 
 public class HelloApplication extends Application {
     @Override
@@ -19,13 +20,13 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-
         try (Connection con = DataBase.getConnection()) {
             System.out.println("conncted");
         } catch (Exception e) {
             System.out.println("not connected");
             e.printStackTrace();
         }
+
         launch();
     }
 

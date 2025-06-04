@@ -3,7 +3,7 @@ package develop.telegram;
 public class Login {
     private UserDatabase userDatabase = new UserDatabase();
 
-    public boolean login(String username, String rawPassword) {
+    public boolean loginService(String username, String rawPassword) {
         User user = userDatabase.findByUsername(username);
         if (user == null) {
             System.out.println("User not found");
