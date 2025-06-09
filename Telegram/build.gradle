@@ -84,7 +84,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'develop.telegram'
-    mainClass = 'develop.telegram.TelegramClientApp'
+    mainClass = 'develop.telegram.app.TelegramClientApp'
 }
 
 javafx {
